@@ -40,4 +40,19 @@ weather-app/
 ├── styles.css # Styling and responsive design
 ├── script.js # JavaScript logic, API integration, event handling
 ├── README.md # Documentation (this file)
-└── Weather_App_Report.docx # Written report for submission
+
+
+---
+
+## ⚙️ Technical Workflow
+
+```mermaid
+flowchart TD
+    A[User Input / Geolocation] --> B[Fetch Data from APIs]
+    B --> C[Process & Merge Results]
+    C --> D[Display Current Weather]
+    C --> E[Render Hourly & Weekly Forecasts]
+    D --> F[Dynamic Theme Update]
+    E --> G[Chart.js 24-Hour Comparison]
+    G --> H[Favorites & Unit Conversion Features]
+
