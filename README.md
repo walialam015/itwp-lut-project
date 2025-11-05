@@ -64,7 +64,7 @@ const API_KEYS = {
 };
 ```
 
-4. Run the Application --> Simply open index.html in your browser — no server setup required.
+4. Run the Application --> Simply open index.html in your browser  (no server setup required)
 
 
 ---
