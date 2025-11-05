@@ -1,34 +1,22 @@
-# 🌦️ Weather App
+# 🌦️ Super Weather App — ITWP Course Project
 
-[![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5&logoColor=white)](#)
-[![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript&logoColor=white)](#)
-[![Chart.js](https://img.shields.io/badge/Chart.js-Data%20Visualization-ff6384?logo=chartdotjs&logoColor=white)](#)
-[![OpenWeatherMap](https://img.shields.io/badge/API-OpenWeatherMap-orange?logo=openstreetmap&logoColor=white)](#)
-[![WeatherAPI](https://img.shields.io/badge/API-WeatherAPI-blueviolet?logo=cloudflare&logoColor=white)](#)
-[![Open-Meteo](https://img.shields.io/badge/API-OpenMeteo-green?logo=databricks&logoColor=white)](#)
-
-A responsive, feature-rich weather web application built using **HTML**, **CSS**, and **Vanilla JavaScript**, without large frameworks.  
-It combines multiple data sources to deliver reliable, real-time weather information with a modern, dynamic interface.  
+A modern, responsive weather application built using **HTML**, **CSS**, and **JavaScript** — without any large frameworks.  
+The app integrates multiple weather APIs to deliver accurate forecasts, live weather data, and rich visualizations.
 
 ---
 
-## 🧩 Features
+## 🎯 Project Overview
 
-| Feature | Description |
-|----------|--------------|
-| 🔍 **Location Search** | Search weather for any city worldwide |
-| 📍 **Geolocation** | Detect and show weather using GPS |
-| 🌐 **Multi-Provider Data** | Uses **OpenWeatherMap**, **WeatherAPI**, and **Open-Meteo** |
-| ☀️ **Current Weather** | Temperature, humidity, visibility, wind, and description |
-| 🕒 **24-Hour Forecast** | Hourly weather data with Chart.js visualization |
-| 📅 **7-Day Forecast** | Extended daily forecast with weather icons |
-| 🎨 **Dynamic Theme** | Background color and visuals adapt to conditions (hot, cold, night, etc.) |
-| 📊 **Temperature Comparison Graph** | 24-hour dual-source temperature visualization |
-| ⭐ **Favorites System** | Save, view, and manage favorite locations |
-| 🌡️ **Unit Conversion** | Toggle between °C, °F, and K |
-| 📱 **Responsive Design** | Works seamlessly on desktop and mobile |
-| 🧭 **Cross-Browser Support** | Tested on Chrome, Edge, Firefox, and Safari |
+The **Super Weather App** was developed as part of the *ITWP course at LUT University (2025)*.  
+Its main goal is to demonstrate how to integrate multiple APIs, handle asynchronous data, and build a fully interactive user experience with pure front-end technologies.
+
+**Key Objectives:**
+- Fetch weather data from **three different APIs** (OpenWeatherMap, WeatherAPI, Open-Meteo).
+- Display **current, hourly, and 7-day forecasts**.
+- Allow users to **search cities** or use **geolocation**.
+- Include **dynamic visuals and temperature-based color themes**.
+- Enable **favorites** and **unit conversions** (°C, °F, K).
+- Present a **24-hour temperature comparison chart**.
 
 ---
 
@@ -40,7 +28,10 @@ weather-app/
 ├── styles.css # Styling and responsive design
 ├── script.js # JavaScript logic, API integration, event handling
 ├── README.md # Documentation (this file)
+└── Weather_App_Report.docx # Written report for submission
 
+css
+Copy code
 
 ---
 
@@ -55,4 +46,83 @@ flowchart TD
     D --> F[Dynamic Theme Update]
     E --> G[Chart.js 24-Hour Comparison]
     G --> H[Favorites & Unit Conversion Features]
+🔧 Setup & Installation
+1. Clone the Repository
+bash
+Copy code
+git clone https://github.com/walialam015/itwp-lut-project.git
+2. Navigate into the Project
+bash
+Copy code
+cd itwp-lut-project
+3. Insert Your API Keys
+Open script.js and replace the placeholder keys:
 
+javascript
+Copy code
+const API_KEYS = {
+    openweathermap: "YOUR_OPENWEATHERMAP_KEY",
+    weatherapi: "YOUR_WEATHERAPI_KEY"
+};
+4. Run the Application
+Simply open index.html in your browser — no additional setup required.
+
+💡 Usage Guide
+Enter a city name in the search bar or click the location icon to use GPS.
+
+View current weather, hourly forecast, and 7-day outlook.
+
+Click the heart icon to save a city as a favorite.
+
+Use the unit toggle buttons to switch between °C, °F, and K.
+
+Open the Favorites menu to quickly access saved locations.
+
+🎨 Design Highlights
+Responsive Layout — works seamlessly on both desktop and mobile devices.
+
+Dynamic Color Themes — background changes based on temperature, time of day, and weather condition.
+
+Interactive Charts — powered by Chart.js for visual 24-hour comparison between APIs.
+
+Smooth User Experience — includes loading indicators, animations, and detailed error handling.
+
+🌍 Compatibility
+The app has been tested successfully on:
+
+Browser	Status
+Google Chrome	✅
+Mozilla Firefox	✅
+Microsoft Edge	✅
+Apple Safari	✅
+
+🧩 Future Enhancements
+Add Air Quality Index (AQI) information
+
+Include sunrise/sunset times
+
+Add weather alerts and radar maps
+
+Introduce dark/light mode toggle
+
+Support multiple languages
+
+🧠 Technical Stack
+Technology	Purpose
+HTML5	Base structure and layout
+CSS3	Styling, themes, responsiveness
+JavaScript (ES6)	Logic, DOM manipulation, API calls
+Chart.js	24-hour temperature comparison graph
+OpenWeatherMap API	Current and forecast weather data
+WeatherAPI	Alternative data source for comparison
+Open-Meteo API	Free global 7-day and hourly forecast
+
+🧑‍💻 Author
+Name: Wali Alam
+Course: ITWP — LUT University
+Year: 2025
+GitHub Repository: github.com/walialam015/itwp-lut-project
+
+🪶 License
+This project was developed for educational purposes under the LUT University ITWP course.
+All APIs used are public and free within their respective license terms.
