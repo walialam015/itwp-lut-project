@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Multi-Provider</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <div class="header-controls">
+                <div class="temperature-unit-selector">
+                    <button class="unit-btn active" data-unit="celsius">&deg;C</button>
+                    <button class="unit-btn" data-unit="fahrenheit">&deg;F</button>
+                    <button class="unit-btn" data-unit="kelvin">K</button>
+                </div>
+                <button class="favorites-btn" id="favoritesBtn">
+                    <i class="fas fa-heart"></i> Favorites
+                </button>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." />
+                <button id="searchButton">Search</button>
+                <button id="locationButton" title="Use my location">
+                    <i class="fas fa-map-marker-alt"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Current Weather Comparison -->
+        <section class="current-weather" id="currentWeather">
+            <h2 id="cityName">Enter a city to see weather</h2>
+            <div class="weather-providers">
+                <div class="provider-card" id="openweatherCard">
+                    <div class="provider-header">
+                        <h3>OpenWeatherMap</h3>
+                        <div class="weather-icon">
+                            <i id="owIcon" class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="temperature">
+                        <span id="owTemp">--</span>
+                        <span class="unit">&deg;C</span>
+                    </div>
+                    <p id="owDescription">--</p>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility: <span id="owVisibility">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind: <span id="owWind">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity: <span id="owHumidity">--</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card" id="weatherapiCard">
+                    <div class="provider-header">
+                        <h3>WeatherAPI</h3>
+                        <div class="weather-icon">
+                            <i id="waIcon" class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="temperature">
+                        <span id="waTemp">--</span>
+                        <span class="unit">&deg;C</span>
+                    </div>
+                    <p id="waDescription">--</p>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility: <span id="waVisibility">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind: <span id="waWind">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity: <span id="waHumidity">--</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card" id="openmeteoCard">
+                    <div class="provider-header">
+                        <h3>Open‑Meteo</h3>
+                        <div class="weather-icon">
+                            <i id="awIcon" class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="temperature">
+                        <span id="awTemp">--</span>
+                        <span class="unit">&deg;C</span>
+                    </div>
+                    <p id="awDescription">--</p>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility: <span id="awVisibility">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind: <span id="awWind">--</span></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity: <span id="awHumidity">--</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="favorite-controls">
+                <button id="addToFavorites" class="favorite-btn">
+                    <i class="fas fa-heart"></i> Add to Favorites
+                </button>
+            </div>
+        </section>
+
+        <!-- 24-Hour Forecast with Comparison Chart -->
+        <section class="forecast-section">
+            <h3>24-Hour Temperature Forecast Comparison</h3>
+            <div class="chart-container">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="hourly-forecast" id="hourlyForecast">
+                <!-- Hourly forecast will be added here -->
+            </div>
+        </section>
+
+        <!-- 7-Day Forecast -->
+        <section class="forecast-section">
+            <h3>7-Day Forecast</h3>
+            <div class="weekly-forecast" id="weeklyForecast">
+                <!-- Weekly forecast will be added here -->
+            </div>
+        </section>
+
+        <!-- Favorites Modal -->
+        <div class="modal" id="favoritesModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Favorite Locations</h3>
+                    <button class="close-btn" id="closeFavorites">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="favoritesList">
+                        <!-- Favorites will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading weather data from multiple providers...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error" id="errorMessage">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="errorText">Sorry, could not find weather data. Please try again.</p>
+        </div>
+    </div>
+
+</body>
+</html>
