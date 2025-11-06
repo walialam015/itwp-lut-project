@@ -66,7 +66,6 @@ const API_KEYS = {
 
 4. Run the Application --> Simply open index.html in your browser  (no server setup required)
 
-
 ---
 
 ## ⚙️ Technical Workflow
@@ -80,8 +79,50 @@ flowchart TD
     D --> F[Dynamic Theme Update]
     E --> G[Chart.js 24-Hour Comparison]
     G --> H[Favorites & Unit Conversion Features]
+```
 
+---
 
+## 💡 Usage Guide
 
+- **Search**: Enter a city name in the search box, or click the location icon for automatic detection.
+- **View**: Check current weather, hourly, and 7-day forecasts.
+- **Favorites**: Click the heart icon ❤️ to add a city to favorites.
+- **Units**: Use the unit toggle buttons to switch between °C, °F, and K.
+- **Quick Access**: Click Favorites to quickly access saved cities.
 
+---
 
+## 🎨 Design Highlights
+
+- **Responsive Layout**: Adapts seamlessly from desktop to mobile.
+- **Dynamic Color Themes**: Background and icons reflect temperature and conditions (blue for cold, orange for hot, dark for night).
+- **Interactive Charts**: 24-hour temperature comparison using Chart.js.
+- **Smooth Experience**: Optimized animations, loading states, and error handling.
+
+---
+
+## 🌍 Compatibility
+
+Tested successfully on:
+- Google Chrome ✅
+- Mozilla Firefox ✅
+- Microsoft Edge ✅
+- Apple Safari ✅
+
+---
+
+## 🧩 Future Enhancements
+
+- Add Air Quality Index (AQI) support
+- Integrate sunrise/sunset times
+- Include weather alerts and radar maps
+- Add dark/light mode toggle
+- Support multiple languages
+
+---
+
+## 🪶 License
+
+This project was created for educational purposes as part of the LUT University Introduction to Web Programming course.  
+All APIs used are publicly available under their respective free license tiers.
